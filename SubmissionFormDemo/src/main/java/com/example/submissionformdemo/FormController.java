@@ -4,15 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.HashMap;
+import java.util.Optional;
 
 @Controller
 public class FormController {
     @Autowired
     CustomerRepo repo;
+
 
     @RequestMapping("/")
     public ModelAndView showForm() {
@@ -20,20 +24,27 @@ public class FormController {
     }
 
     @RequestMapping("/view")
-    public ModelAndView viewForm(int id, String name, String email, ModelMap modelMap) {
+    public ModelAndView viewForm(int id, String name, String email, ModelMap modelMap, Customer customer) {
         ModelAndView mv = new ModelAndView("viewform");
         modelMap.put("id", id);
         modelMap.put("name", name);
         modelMap.put("email", email);
         mv.addObject(modelMap);
-        //taking customer as the function parameter and directly saving to repo gives null value for email.
-        // that's why manually added all the value.
-        Customer customer = new Customer();
-        customer.setId(id);
-        customer.setMail(email);
-        customer.setName(name);
         repo.save(customer);
         return mv;
+    }
+
+    @RequestMapping("/CustomerList")
+    public ModelAndView getAllCustomers(ModelMap modelMap) {
+        ModelAndView mv = new ModelAndView("customerlist");
+        modelMap.put("customers", repo.findAll());
+        return mv;
+    }
+
+    @RequestMapping("/CustomerList/{id}")
+    @ResponseBody
+    public Optional<Customer> getCustomer(ModelMap modelMap, @PathVariable("id") int id) {
+        return repo.findById(id);
     }
 
 /*    @GetMapping("form")

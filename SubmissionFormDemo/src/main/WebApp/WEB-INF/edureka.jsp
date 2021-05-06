@@ -100,21 +100,21 @@
 
 </head>
 <body>
-    <div class="main-block">
-        <div class="left-part">
-            <i class="fas fa-envelope"></i>
-            <i class="fas fa-at"></i>
-            <i class="fas fa-mail-bulk"></i>
-        </div>
-        <form method="post", action="/view">
-            <h1>Contact Us</h1>
-            <div class="info">
-                Enter Customer ID: <input type="text" name="id" placeholder="Id"><br>
-                Enter Customer Email: <input type="email" name="email" placeholder="Email Address"><br>
-                Enter Customer Name: <input type="text" name="name" placeholder="Full Name"><br>
-            </div>
-            <button type="submit" href="/">Submit</button>
-        </form>
+<div class="main-block">
+    <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
     </div>
+    <form method="post", action="/view">
+        <h1>Contact Us</h1>
+        <div class="info">
+            Enter Customer ID: <input type="text" name="id" placeholder="Id"><br>
+            Enter Customer Email: <input type="email" name="email" placeholder="Email Address"><br>
+            Enter Customer Name: <input type="text" name="name" placeholder="Full Name"><br>
+        </div>
+        <button type="submit" href="/">Submit</button>
+    </form>
+</div>
 </body>
 </html>

@@ -75,9 +75,9 @@
 
 </head>
 <body>
-            <h1>Customer Details</h1>
-            <h3>Customer ID: ${id}</h3>
-            <h3>Customer Name: ${name}</h3>
-            <h3>Customer Email: ${email}</h3>
+<h1>Customer Details</h1>
+<h3>Customer ID: ${id}</h3>
+<h3>Customer Name: ${name}</h3>
+<h3>Customer Email: ${email}</h3>
 </body>
 </html>

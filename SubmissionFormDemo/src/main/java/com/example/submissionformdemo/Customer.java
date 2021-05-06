@@ -2,8 +2,10 @@ package com.example.submissionformdemo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "customer")
 public class Customer {
     @Id
     private int id;
@@ -30,7 +32,7 @@ public class Customer {
         return name;
     }
 
-    public String getMail() {
+    public String getEmail() {
         return email;
     }
 
