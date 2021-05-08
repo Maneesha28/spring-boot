@@ -10,6 +10,14 @@
 <head>
     <title>Welcome</title>
 </head>
+    <style>
+        h2 {
+            text-align: center;
+            font-family: Helvetica;
+            color: darkblue;
+            font-size: 32px;
+        }
+    </style>
 <body>
 <h2> Hello ${username} </h2>
 </body>
