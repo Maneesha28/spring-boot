@@ -64,7 +64,7 @@
         }
 
         input, textarea {
-            width: calc(100% - 18px);
+            width: calc(100% - 20px);
             padding: 8px;
             margin-bottom: 20px;
             border: 1px solid #1c87c9;

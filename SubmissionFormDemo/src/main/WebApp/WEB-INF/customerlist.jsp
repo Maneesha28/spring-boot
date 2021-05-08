@@ -14,6 +14,10 @@
 <body>
 
 <style>
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
     th, td {
         padding: 15px;
         text-align: center;
@@ -42,7 +46,7 @@
 
 </style>
 
-<table style="width:50%">
+<table class="center" style="width:50%">
     <tr>
         <th>Customer ID</th>
         <th>Name</th>
